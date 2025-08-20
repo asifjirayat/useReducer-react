@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "./Button.jsx";
 
 const Counter = () => {
   const [count, setCount] = useState(0);
@@ -26,24 +27,15 @@ const Counter = () => {
         <span className={`font-bold ${countStyles}`}>{count}</span>
       </p>
       <div className="flex flex-row gap-4 mt-8">
-        <button
-          onClick={incrementCount}
-          className="p-4 bg-green-100 text-green-700 rounded cursor-pointer"
-        >
+        <Button onClick={incrementCount} type="increment">
           Increment Count
-        </button>
-        <button
-          onClick={decrementCount}
-          className="p-4 bg-red-100 text-red-700 rounded cursor-pointer"
-        >
+        </Button>
+        <Button onClick={decrementCount} type="decrement">
           Decrement Count
-        </button>
-        <button
-          onClick={resetCount}
-          className="p-4 bg-stone-100 text-stone-700 rounded cursor-pointer"
-        >
+        </Button>
+        <Button onClick={resetCount} type="reset">
           Reset Count
-        </button>
+        </Button>
       </div>
     </div>
   );
